@@ -8,7 +8,7 @@ const StatCard = ({ icon: Icon, label, value, color }) => (
       <Icon className="w-6 h-6" style={{ color }} />
     </div>
     <div>
-      <p className="text-2xl font-bold">{value}</p>
+      <p className="text-2xl font-bold text-white">{value}</p>
       <p className="text-sm text-gray-400">{label}</p>
     </div>
   </div>
@@ -23,7 +23,7 @@ const AdminDashboard = () => {
 
   return (
     <div>
-      <h1 className="text-2xl font-bold mb-8">Dashboard Overview</h1>
+      <h1 className="text-2xl font-bold mb-8 text-white">Dashboard Overview</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         <StatCard icon={FaProjectDiagram} label="Total Projects" value={stats.projects} color="#A855F7" />
         <StatCard icon={FaCode} label="Total Skills" value={stats.skills} color="#60A5FA" />

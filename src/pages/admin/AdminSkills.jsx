@@ -37,7 +37,7 @@ const AdminSkills = () => {
   return (
     <div>
       <div className="flex items-center justify-between mb-8">
-        <h1 className="text-2xl font-bold">Manage Skills</h1>
+        <h1 className="text-2xl font-bold text-white">Manage Skills</h1>
         <button onClick={() => { setForm(emptySkill); setEditing(null); setShowForm(true); }} className="bg-[#A855F7] hover:bg-[#7e22ce] text-white px-4 py-2 rounded-lg flex items-center gap-2 text-sm font-semibold">
           <FaPlus /> Add Skill
         </button>
@@ -46,7 +46,7 @@ const AdminSkills = () => {
       {showForm && (
         <div className="bg-[#121217] card-border rounded-2xl p-6 mb-8">
           <div className="flex justify-between items-center mb-4">
-            <h3 className="font-bold">{editing ? 'Edit Skill' : 'New Skill'}</h3>
+            <h3 className="font-bold text-white">{editing ? 'Edit Skill' : 'New Skill'}</h3>
             <button onClick={() => setShowForm(false)}><FaTimes className="text-gray-400" /></button>
           </div>
           <form onSubmit={handleSave} className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -76,7 +76,7 @@ const AdminSkills = () => {
               <tr key={s.id} className="border-b border-white/5 hover:bg-white/2">
                 <td className="p-4 flex items-center gap-3">
                   {s.icon_url && <img src={s.icon_url} className="w-8 h-8" alt={s.name} />}
-                  <span className="font-medium">{s.name}</span>
+                  <span className="font-medium text-white">{s.name}</span>
                 </td>
                 <td className="p-4"><div className="flex items-center gap-2"><div className="w-24 h-2 bg-gray-800 rounded-full"><div className="h-full rounded-full" style={{ width: `${s.percentage}%`, backgroundColor: s.color }}></div></div><span className="text-sm text-gray-400">{s.percentage}%</span></div></td>
                 <td className="p-4"><div className="flex items-center gap-2"><div className="w-4 h-4 rounded" style={{ backgroundColor: s.color }}></div><span className="text-sm text-gray-400">{s.color}</span></div></td>

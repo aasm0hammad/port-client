@@ -25,7 +25,7 @@ const AdminLayout = () => {
       {/* Sidebar */}
       <aside className="w-64 bg-[#121217] border-r border-white/5 flex flex-col min-h-screen fixed left-0 top-0">
         <div className="p-6 border-b border-white/5">
-          <h1 className="text-xl font-bold">AM<span className="text-[#A855F7]">.</span> <span className="text-sm font-normal text-gray-400">Admin</span></h1>
+          <h1 className="text-xl font-bold text-white">AM<span className="text-[#A855F7]">.</span> <span className="text-sm font-normal text-gray-400">Admin</span></h1>
         </div>
         <nav className="flex-1 py-4">
           {sidebarLinks.map((link) => (
@@ -48,7 +48,7 @@ const AdminLayout = () => {
       {/* Main Content */}
       <main className="flex-1 ml-64">
         <header className="sticky top-0 z-10 bg-[#0a0a0c]/90 backdrop-blur-md border-b border-white/5 px-8 py-4 flex items-center justify-between">
-          <h2 className="text-lg font-semibold">Welcome, <span className="text-[#A855F7]">{user?.username || 'Admin'}</span></h2>
+          <h2 className="text-lg font-semibold text-white">Welcome, <span className="text-[#A855F7]">{user?.username || 'Admin'}</span></h2>
         </header>
         <div className="p-8">
           <Outlet />

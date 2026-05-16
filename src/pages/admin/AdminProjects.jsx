@@ -46,13 +46,13 @@ const AdminProjects = () => {
   return (
     <div>
       <div className="flex items-center justify-between mb-8">
-        <h1 className="text-2xl font-bold">Manage Projects</h1>
+        <h1 className="text-2xl font-bold text-white">Manage Projects</h1>
         <button onClick={() => { setForm(emptyProject); setEditing(null); setShowForm(true); }} className="bg-[#A855F7] hover:bg-[#7e22ce] text-white px-4 py-2 rounded-lg flex items-center gap-2 text-sm font-semibold"><FaPlus /> Add Project</button>
       </div>
 
       {showForm && (
         <div className="bg-[#121217] card-border rounded-2xl p-6 mb-8">
-          <div className="flex justify-between items-center mb-4"><h3 className="font-bold">{editing ? 'Edit' : 'New'} Project</h3><button onClick={() => setShowForm(false)}><FaTimes className="text-gray-400" /></button></div>
+          <div className="flex justify-between items-center mb-4"><h3 className="font-bold text-white">{editing ? 'Edit' : 'New'} Project</h3><button onClick={() => setShowForm(false)}><FaTimes className="text-gray-400" /></button></div>
           <form onSubmit={handleSave} className="space-y-4">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <input value={form.title} onChange={(e) => setForm({...form, title: e.target.value})} placeholder="Project Title" className="bg-[#0a0a0c] border border-gray-800 focus:border-[#A855F7] rounded-xl p-3 text-white outline-none text-sm" required />
@@ -83,7 +83,7 @@ const AdminProjects = () => {
             </div>
             <div className="p-4">
               <div className="flex justify-between items-start mb-2">
-                <h4 className="font-bold">{p.title}</h4>
+                <h4 className="font-bold text-white">{p.title}</h4>
                 {p.is_visible ? <FaEye className="text-green-500 w-4 h-4" /> : <FaEyeSlash className="text-gray-600 w-4 h-4" />}
               </div>
               <p className="text-gray-400 text-sm mb-3 line-clamp-2">{p.description}</p>

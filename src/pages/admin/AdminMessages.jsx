@@ -22,7 +22,7 @@ const AdminMessages = () => {
 
   return (
     <div>
-      <h1 className="text-2xl font-bold mb-8">Messages Inbox</h1>
+      <h1 className="text-2xl font-bold mb-8 text-white">Messages Inbox</h1>
       <div className="space-y-4">
         {messages.map((msg) => (
           <div key={msg.id} className={`bg-[#121217] card-border rounded-2xl p-6 ${!msg.is_read ? 'border-l-4 border-l-[#A855F7]' : ''}`}>
@@ -30,7 +30,7 @@ const AdminMessages = () => {
               <div className="flex-1">
                 <div className="flex items-center gap-3 mb-2">
                   {msg.is_read ? <FaEnvelopeOpen className="text-gray-600" /> : <FaEnvelope className="text-[#A855F7]" />}
-                  <h4 className="font-bold">{msg.sender_name}</h4>
+                  <h4 className="font-bold text-white">{msg.sender_name}</h4>
                   <span className="text-sm text-gray-500">{msg.sender_email}</span>
                   {!msg.is_read && <span className="bg-[#A855F7] text-white text-[10px] px-2 py-0.5 rounded-full font-bold">NEW</span>}
                 </div>

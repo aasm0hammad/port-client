@@ -34,7 +34,7 @@ const AdminProfile = () => {
 
   return (
     <div>
-      <h1 className="text-2xl font-bold mb-8">Edit Profile</h1>
+      <h1 className="text-2xl font-bold mb-8 text-white">Edit Profile</h1>
       <form onSubmit={handleSave} className="bg-[#121217] card-border rounded-2xl p-8 space-y-6 max-w-3xl">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <Field label="Full Name" name="name" />

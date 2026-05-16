@@ -35,13 +35,13 @@ const AdminSocial = () => {
   return (
     <div>
       <div className="flex items-center justify-between mb-8">
-        <h1 className="text-2xl font-bold">Social Links</h1>
+        <h1 className="text-2xl font-bold text-white">Social Links</h1>
         <button onClick={() => { setForm(emptySocial); setEditing(null); setShowForm(true); }} className="bg-[#A855F7] hover:bg-[#7e22ce] text-white px-4 py-2 rounded-lg flex items-center gap-2 text-sm font-semibold"><FaPlus /> Add Link</button>
       </div>
 
       {showForm && (
         <div className="bg-[#121217] card-border rounded-2xl p-6 mb-8">
-          <div className="flex justify-between items-center mb-4"><h3 className="font-bold">{editing ? 'Edit' : 'New'} Social Link</h3><button onClick={() => setShowForm(false)}><FaTimes className="text-gray-400" /></button></div>
+          <div className="flex justify-between items-center mb-4"><h3 className="font-bold text-white">{editing ? 'Edit' : 'New'} Social Link</h3><button onClick={() => setShowForm(false)}><FaTimes className="text-gray-400" /></button></div>
           <form onSubmit={handleSave} className="grid grid-cols-1 md:grid-cols-4 gap-4">
             <input value={form.platform} onChange={(e) => setForm({...form, platform: e.target.value})} placeholder="Platform (e.g. GitHub)" className="bg-[#0a0a0c] border border-gray-800 focus:border-[#A855F7] rounded-xl p-3 text-white outline-none text-sm" required />
             <input value={form.url} onChange={(e) => setForm({...form, url: e.target.value})} placeholder="URL" className="bg-[#0a0a0c] border border-gray-800 focus:border-[#A855F7] rounded-xl p-3 text-white outline-none text-sm" required />
@@ -63,7 +63,7 @@ const AdminSocial = () => {
           <tbody>
             {links.map((l) => (
               <tr key={l.id} className="border-b border-white/5">
-                <td className="p-4 font-medium">{l.platform}</td>
+                <td className="p-4 font-medium text-white">{l.platform}</td>
                 <td className="p-4 text-gray-400 text-sm truncate max-w-xs">{l.url}</td>
                 <td className="p-4 text-gray-400">{l.display_order}</td>
                 <td className="p-4 text-right">
