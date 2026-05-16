@@ -1,0 +1,139 @@
+@import "tailwindcss";
+
+/* ===== Custom Theme (Tailwind v4) ===== */
+@theme {
+  --color-bg-primary: var(--bg-primary);
+  --color-bg-secondary: var(--bg-secondary);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-border: var(--border-color);
+  --color-brand-purple: #A855F7;
+  --color-brand-purple-dark: #7e22ce;
+  --color-brand-purple-light: #d8b4fe;
+  --font-sans: 'Inter', sans-serif;
+}
+
+@layer base {
+  :root {
+    --bg-primary: #ffffff;
+    --bg-secondary: #f3f4f6;
+    --text-primary: #111827;
+    --text-secondary: #4b5563;
+    --border-color: #e5e7eb;
+  }
+  .dark {
+    --bg-primary: #0a0a0c;
+    --bg-secondary: #121217;
+    --text-primary: #ffffff;
+    --text-secondary: #9ca3af;
+    --border-color: rgba(255, 255, 255, 0.05);
+  }
+}
+
+/* ===== Base Styles ===== */
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ===== Custom Effects ===== */
+.glow-purple {
+  box-shadow: 0 0 20px rgba(168, 85, 247, 0.4);
+}
+
+.text-gradient {
+  background: linear-gradient(to right, #A855F7, #d8b4fe);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.card-border {
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Profile image glow ring */
+.profile-glow {
+  border: 2px solid rgba(168, 85, 247, 0.3);
+  position: relative;
+}
+
+.profile-glow::after {
+  content: '';
+  position: absolute;
+  inset: -10px;
+  border: 1px solid rgba(168, 85, 247, 0.15);
+  border-radius: 50%;
+}
+
+/* Circular Progress */
+.circular-progress {
+  position: relative;
+  width: 60px;
+  height: 60px;
+}
+
+.circular-progress svg {
+  transform: rotate(-90deg);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a0c;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #A855F7;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Mobile menu overlay */
+.mobile-menu-overlay {
+  background: rgba(10, 10, 12, 0.9);
+  backdrop-filter: blur(10px);
+}
+
+/* Admin sidebar active indicator */
+.admin-nav-active {
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.2), rgba(168, 85, 247, 0.05));
+  border-left: 3px solid #A855F7;
+}
